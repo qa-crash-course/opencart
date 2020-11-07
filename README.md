@@ -1,1 +1,1 @@
-# OPENCART. Testing progect
+# OPENCART. Testing project
