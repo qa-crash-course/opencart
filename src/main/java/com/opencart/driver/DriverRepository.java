@@ -20,11 +20,12 @@ public class DriverRepository {
         WebDriverManager.firefoxdriver().setup();
     }
 
-    public static void instanceWebBrowser(){
+    public static void instanceWebBrowser() {
         webDriver = new FirefoxDriver();
         DRIVERS.set(webDriver);
     }
-    public static void closeBrowser(){
+
+    public static void closeBrowser() {
         webDriver.quit();
     }
 
