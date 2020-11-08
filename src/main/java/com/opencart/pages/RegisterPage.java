@@ -6,21 +6,28 @@ import org.openqa.selenium.support.FindBy;
 
 public class RegisterPage extends BasePage {
 
-    @FindBy(xpath = ".//*input[@name ='firstname']")
+    @FindBy(id = "input-firstname")
     private WebElement firstNameInput;
-    @FindBy(xpath = ".//*input[@name ='lastname']")
+
+    @FindBy(id = "input-lastname")
     private WebElement lastNameInput;
-    @FindBy(xpath = ".//*input[@name ='email']")
+
+    @FindBy(id = "input-email")
     private WebElement emailInput;
-    @FindBy(xpath = ".//*input[@name ='telephone']")
+
+    @FindBy(id = "input-telephone")
     private WebElement telephoneInput;
-    @FindBy(xpath = ".//*input[@name ='password']")
+
+    @FindBy(id = "input-password")
     private WebElement passwordInput;
-    @FindBy(xpath = ".//*input[@name ='confirm']")
-    private WebElement confirmPasswordInput;
-    @FindBy(xpath = ".//*input[@name ='agree']")
+
+    @FindBy(id = "input-confirm")
+    private WebElement passwordConfirmInput;
+
+    @FindBy(name = "agree")
     private WebElement policy;
-    @FindBy(xpath = ".//*input[@type ='submit' and @value = 'Continue']")
+
+    @FindBy(xpath = ".//*[@type='submit']")
     private WebElement continueButton;
 
     public WebElement getSubscribeRadioButton(int value) {
@@ -48,8 +55,8 @@ public class RegisterPage extends BasePage {
         return passwordInput;
     }
 
-    public WebElement getConfirmPasswordInput() {
-        return confirmPasswordInput;
+    public WebElement getPasswordConfirmInput() {
+        return passwordConfirmInput;
     }
 
     public WebElement getPolicy() {
