@@ -2,12 +2,14 @@ package com.opencart.driver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 /**
- * Class where we connect the driver using selenium.WebDriver dependency
+ * Class where we connect to the Browsers within selenium.WebDriver dependency
+ * downloadWebDriver()
+ * instanceWebBrowser()
+ * closeBrowser()
  */
-
 public class DriverRepository {
 
     public final static ThreadLocal<WebDriver> DRIVERS = new ThreadLocal<>();
@@ -17,12 +19,13 @@ public class DriverRepository {
     }
 
     public static void downloadWebDriver() {
-        WebDriverManager.firefoxdriver().setup();
+        WebDriverManager.chromedriver().setup();
     }
 
     public static void instanceWebBrowser() {
-        webDriver = new FirefoxDriver();
+        webDriver = new ChromeDriver();
         DRIVERS.set(webDriver);
+        webDriver.manage().window().maximize();
     }
 
     public static void closeBrowser() {
