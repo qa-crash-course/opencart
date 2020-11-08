@@ -16,8 +16,8 @@ public class HeaderPageBL {
         return this;
     }
 
-    public HeaderPageBL clickOnRegisterButton() {
+    public RegisterPageBL clickOnRegisterButton() {
         headerPage.getRegisterButton().click();
-        return this;
+        return new RegisterPageBL();
     }
 }
