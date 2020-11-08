@@ -9,7 +9,7 @@ public class RegisterModelRepository {
 
     public static RegisterModel getRegisterModel() {
         String password = RandomStringUtils.randomAlphabetic(7);
-        return RegisterModel.builder()
+        return RegisterModel.getBuilder()
                 .firstName(RandomStringUtils.randomAlphabetic(5))
                 .lastName(RandomStringUtils.randomAlphabetic(7))
                 .email(RandomStringUtils.randomAlphabetic(5) + "@gmail.com")
