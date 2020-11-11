@@ -1,6 +1,6 @@
 package com.opencart.datamodel;
 
-import lombok.Builder;
+
 import lombok.Getter;
 
 @Getter
