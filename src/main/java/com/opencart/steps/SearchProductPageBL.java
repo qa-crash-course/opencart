@@ -5,7 +5,6 @@ import com.opencart.pages.SearchProductPage;
 import com.opencart.pages.SearchProductResultPage;
 import org.testng.Assert;
 
-import java.util.LinkedList;
 import java.util.List;
 
 /*
@@ -30,27 +29,22 @@ public class SearchProductPageBL {
         return this;
     }
 
-    public void verifySearchResult(String productName) {
-//        String expectedMessage = "Products meeting the search criteria";
-//        Assert.assertEquals(searchProductResultPage.getSuccessTitle().getText(),
-//                expectedMessage, "Incorrect Search result");
-      Assert.assertTrue(foundProductName(productName));
+    public void verifySearchResult(String searchCriteria) {
+        Assert.assertTrue(findAllProductBySearchCriteria(searchCriteria));
     }
 
-    public boolean foundProductName(String productName) {
-        List<ProductContainer> products = searchProductResultPage.getProducts();
-        for (ProductContainer product : products) {
-            if (product.getName().getText().contains(productName))
-                return true;
+    private boolean findAllProductBySearchCriteria(String searchCriteria) {
+        List<ProductContainer> productContainers = searchProductResultPage.getProductContainers();
+        for (ProductContainer productContainer : productContainers) {
+            if (!productContainer.getName().contains(searchCriteria)) {
+                return false;
+            }
         }
-        return false;
+        return true;
     }
-
-
 
     private SearchProductPageBL clickOnSearchGroupButton() {
         searchProductPage.getInputSearchGroupButton().click();
         return this;
     }
-
 }

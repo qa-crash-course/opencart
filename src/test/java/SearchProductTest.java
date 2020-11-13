@@ -11,7 +11,8 @@ public class SearchProductTest extends BaseTest {
     public void searchProduct() {
         new Navigation().navigateToUrl(BASE_URL.getValue());
         MainPageBL mainPageBL = new MainPageBL();
-        SearchProductPageBL searchProductPageBL = mainPageBL.getSearchPageBL()
+        SearchProductPageBL searchProductPageBL = mainPageBL
+                .getSearchPageBL()
                 .makeSearch(MAC.getValue());
         searchProductPageBL.verifySearchResult(MAC.getValue());
     }
