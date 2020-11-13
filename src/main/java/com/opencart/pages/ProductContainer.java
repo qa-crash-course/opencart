@@ -1,52 +1,52 @@
 package com.opencart.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
-import java.util.List;
+/*
+ * Class ProductContainer describes the structure of our Product Card
+ * at the OpenCart site
+ */
 
 public class ProductContainer {
+    private WebElement productLayout;
 
-    @FindBy(xpath = ".//*[@class='caption']/h4")
-    private WebElement name;
-    @FindBy(css = "* div:nth-child(2) > p:nth-child(2)")
-    private WebElement description;
-    @FindBy(className = ".price")
-    private WebElement price;
-    @FindBy(css = "* div:nth-child(2) > p:nth-child(3) > span:nth-child(1)")
-    private WebElement priceExTax;
-    @FindBy(css = "* div.button-group button i.fa.fa-shopping-cart")
-    private WebElement shopingCartButton;
-    @FindBy(css = "* div.button-group button i.fa.fa-heart")
-    private WebElement wishListButton;
-    @FindBy(css = "* div.button-group button i.fa.fa-exchange")
-    private WebElement compareButton;
-
-    public WebElement getName() {
-        return name;
+    public ProductContainer(WebElement productLayout) {
+        this.productLayout = productLayout;
     }
 
-    public WebElement getDescription() {
-        return description;
+    public String getName() {
+        return this.productLayout.findElement(
+                By.xpath(".//*[@class='caption']/h4")).getText();
     }
 
-    public WebElement getPrice() {
-        return price;
+    public String getDescription() {
+        return this.productLayout.findElement(
+                By.cssSelector("* div:nth-child(2) > p:nth-child(2)")).getText();
     }
 
-    public WebElement getPriceExTax() {
-        return priceExTax;
+    public String getPrice() {
+        return this.productLayout.findElement(
+                By.className(".price")).getText();
     }
 
-    public WebElement getShopingCartButton() {
-        return shopingCartButton;
+    public String getPriceExTax() {
+        return this.productLayout.findElement(
+                By.cssSelector("* div.button-group button i.fa.fa-shopping-cart")).getText();
     }
 
-    public WebElement getWishListButton() {
-        return wishListButton;
+    public String getShopingCartButton() {
+        return this.productLayout.findElement(
+                By.cssSelector("* div.button-group button i.fa.fa-shopping-cart")).getText();
     }
 
-    public WebElement getCompareButton() {
-        return compareButton;
+    public String getWishListButton() {
+        return this.productLayout.findElement(
+                By.cssSelector("* div.button-group button i.fa.fa-heart")).getText();
+    }
+
+    public String getCompareButton() {
+        return this.productLayout.findElement(
+                By.cssSelector("* div.button-group button i.fa.fa-exchange")).getText();
     }
 }
