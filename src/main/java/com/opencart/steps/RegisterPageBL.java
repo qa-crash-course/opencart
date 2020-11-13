@@ -7,7 +7,6 @@ import com.opencart.repository.RegisterModelRepository;
 import com.opencart.util.DriverUtils;
 import org.testng.Assert;
 
-
 public class RegisterPageBL {
 
     private RegisterPage registerPage;
@@ -25,7 +24,7 @@ public class RegisterPageBL {
         inputTelephone(registerModel.getTelephone());
         inputPassword(registerModel.getPassword());
         chooseSubscribe(0);
-        clickPolisyCheckBox();
+        clickPolicyCheckBox();
         clickOnContinueButton();
 
         successRegisterPage = new SuccessRegisterPage();
@@ -64,7 +63,7 @@ public class RegisterPageBL {
                 .clickOnElementJS(registerPage.getSubscribeRadioButton(value));
     }
 
-    private void clickPolisyCheckBox() {
+    private void clickPolicyCheckBox() {
         new DriverUtils().clickOnElementJS(registerPage.getPolicy());
     }
 
@@ -75,9 +74,7 @@ public class RegisterPageBL {
 
     public void verifyUserRegistration() {
         String expectedMessage = "Your Account Has Been Created!";
-        Assert.assertEquals(
-                successRegisterPage.getSuccessTitle().getText(),
+        Assert.assertEquals(successRegisterPage.getSuccessTitle().getText(),
                 expectedMessage, "Incorrect page title");
     }
-
 }

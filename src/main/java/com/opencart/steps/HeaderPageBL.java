@@ -2,7 +2,6 @@ package com.opencart.steps;
 
 import com.opencart.pages.HeaderPage;
 
-
 public class HeaderPageBL {
 
     private HeaderPage headerPage;

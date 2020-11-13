@@ -1,13 +1,12 @@
 package com.opencart.enums;
 
-public enum URLs {
-    BASE_URL("http://localhost/upload/"),
+public enum SearchPhrases {
 
-    ADMIN_URL("http://localhost/upload/admin");
+    MAC("Mac"), SONY("Nikon");
 
     private final String value;
 
-    URLs(String value) {
+    SearchPhrases(String value) {
         this.value = value;
     }
 
