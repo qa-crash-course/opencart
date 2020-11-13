@@ -1,8 +1,11 @@
 package com.opencart.steps;
 
+import com.opencart.pages.ProductContainer;
 import com.opencart.pages.SearchProductPage;
 import com.opencart.pages.SearchProductResultPage;
 import org.testng.Assert;
+
+import java.util.List;
 
 /*
  * Class that describes steps (Business logic) of searching product
@@ -26,12 +29,18 @@ public class SearchProductPageBL {
         return this;
     }
 
-    public void verifySearchResult(String productName) {
-        String expectedMessage = "Products meeting the search criteria";
-        Assert.assertEquals(searchProductResultPage.getSuccessTitle().getText(),
-                expectedMessage, "Incorrect Search result");
-        Assert.assertTrue(searchProductResultPage.foundProduct(productName));
-        Assert.assertFalse(false, "There is no product that matches the search criteria.");
+    public void verifySearchResult(String searchCriteria) {
+        Assert.assertTrue(findAllProductBySearchCriteria(searchCriteria));
+    }
+
+    private boolean findAllProductBySearchCriteria(String searchCriteria) {
+        List<ProductContainer> productContainers = searchProductResultPage.getProductContainers();
+        for (ProductContainer productContainer : productContainers) {
+            if (!productContainer.getName().contains(searchCriteria)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     private SearchProductPageBL clickOnSearchGroupButton() {
