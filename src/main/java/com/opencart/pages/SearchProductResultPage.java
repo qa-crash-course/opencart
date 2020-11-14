@@ -13,12 +13,17 @@ import java.util.List;
 public class SearchProductResultPage extends BasePage {
     @FindBy(xpath = ".//div/h2")
     private WebElement successTitle;
-
+    @FindBy(xpath = ".//div/div/p[2]")
+    private WebElement noProductsFoundTitle;
     @FindBy(className = ".product-layout")
     private List<WebElement> productContainers;
 
     public WebElement getSuccessTitle() {
         return successTitle;
+    }
+
+    public WebElement getNoProductsFoundTitle() {
+        return noProductsFoundTitle;
     }
 
     public List<ProductContainer> getProductContainers() {
