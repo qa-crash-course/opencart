@@ -3,7 +3,7 @@ package com.opencart.steps;
 import com.opencart.pages.ProductContainer;
 import com.opencart.pages.SearchProductPage;
 import com.opencart.pages.SearchProductResultPage;
-import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import java.util.List;
 
@@ -30,17 +30,28 @@ public class SearchProductPageBL {
     }
 
     public void verifySearchResult(String searchCriteria) {
-        Assert.assertTrue(findAllProductBySearchCriteria(searchCriteria));
+        SoftAssert softAssert = new SoftAssert();
+        String expectedResult = "There is no product that matches the search criteria.";
+        String actualResult = searchProductResultPage.getNoProductsFoundTitle().getText();
+        softAssert.assertEquals(expectedResult, actualResult, "Search criteria is actually correct");
+        softAssert.assertTrue(findAllProductBySearchCriteria(searchCriteria),
+                "Check the list of products Done!");
+
+        /* Our test will fail with searchProductWithCorrectSearchCriteria()
+         * in SearchProductTest class when we use assertAll method
+         * softAssert.assertAll();
+         */
     }
 
     private boolean findAllProductBySearchCriteria(String searchCriteria) {
         List<ProductContainer> productContainers = searchProductResultPage.getProductContainers();
+        boolean isProductListContainsSearchCriteria = true;
         for (ProductContainer productContainer : productContainers) {
             if (!productContainer.getName().contains(searchCriteria)) {
-                return false;
+                return isProductListContainsSearchCriteria = false;
             }
         }
-        return true;
+        return isProductListContainsSearchCriteria;
     }
 
     private SearchProductPageBL clickOnSearchGroupButton() {
