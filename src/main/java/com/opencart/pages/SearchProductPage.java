@@ -12,6 +12,10 @@ public class SearchProductPage extends BasePage {
     private WebElement inputSearchCriteria;
     @FindBy(css = "*.fa-search")
     private WebElement inputSearchGroupButton;
+    @FindBy(xpath = ".// *[@name ='category_id']")
+    private WebElement categoryContainers;
+    @FindBy(xpath = ".//input[@value='Search']")
+    private WebElement searchButton;
 
     public WebElement getInputSearchCriteria() {
         return inputSearchCriteria;
@@ -19,5 +23,13 @@ public class SearchProductPage extends BasePage {
 
     public WebElement getInputSearchGroupButton() {
         return inputSearchGroupButton;
+    }
+
+    public WebElement getCategoryContainers() {
+        return categoryContainers;
+    }
+
+    public WebElement getSearchButton() {
+        return searchButton;
     }
 }
