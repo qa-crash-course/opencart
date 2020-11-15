@@ -17,5 +17,6 @@ public class Navigation {
 
     public void navigateToUrl(String url) {
         driver.get(url);
+        driver.manage().window().maximize();
     }
 }
