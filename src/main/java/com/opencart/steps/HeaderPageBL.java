@@ -20,4 +20,10 @@ public class HeaderPageBL {
         headerPage.getRegisterButton().click();
         return new RegisterPageBL();
     }
+
+    public LoginPageBL clickOnLoginButton(){
+        headerPage.getLoginButton().click();
+        return new LoginPageBL();
+    }
+
 }
