@@ -9,6 +9,4 @@ import lombok.Getter;
 public class LoginModel {
     private String email;
     private String password;
-
-
 }

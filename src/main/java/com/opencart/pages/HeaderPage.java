@@ -10,7 +10,7 @@ public class HeaderPage extends BasePage {
     private WebElement myAccountButton;
     @FindBy(xpath = ".//*[contains(@href,'register')]")
     private WebElement registerButton;
-    @FindBy(xpath = ".//*[contains(@href,'Login')]" )
+    @FindBy(xpath = ".//*[contains(@href,'login')]" )
     private WebElement loginButton;
 
     public WebElement getMyAccountButton() {
