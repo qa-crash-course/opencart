@@ -17,11 +17,16 @@ public class SearchProductResultPage extends BasePage {
     private WebElement noProductsFoundTitle;
     @FindBy(className = ".product-layout")
     private List<WebElement> productContainers;
-    //searchButton and categoryContainers don't work from this Page?
     @FindBy(xpath = ".//input[@value='Search']")
     private WebElement searchButton;
     @FindBy(xpath = ".// *[@name ='category_id']")
     private WebElement categoryContainers;
+    @FindBy(id = "input-search")
+    private WebElement searchPlaceholder;
+
+    public WebElement getSearchPlaceholder() {
+        return searchPlaceholder;
+    }
 
     public WebElement getSearchButton() {
         return searchButton;
@@ -30,7 +35,6 @@ public class SearchProductResultPage extends BasePage {
     public WebElement getCategoryContainers() {
         return categoryContainers;
     }
-
 
     public WebElement getSuccessTitle() {
         return successTitle;
