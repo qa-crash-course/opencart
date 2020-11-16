@@ -21,7 +21,7 @@ public class HeaderPage extends BasePage {
         return registerButton;
     }
     public WebElement getLoginButton(){
-        //wait.until(ExpectedConditions.visibilityOf(loginButton));
+        wait.until(ExpectedConditions.visibilityOf(loginButton));
         return loginButton;
     }
 }
