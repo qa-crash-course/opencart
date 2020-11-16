@@ -4,7 +4,7 @@ import com.opencart.steps.SearchProductPageBL;
 import org.testng.annotations.Test;
 
 import static com.opencart.enums.SearchPhrases.*;
-import static com.opencart.enums.URLs.BASE_URL;
+import static com.opencart.enums.URLs.*;
 
 public class SearchProductTest extends BaseTest {
     @Test

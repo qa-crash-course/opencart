@@ -3,7 +3,7 @@ import com.opencart.steps.MainPageBL;
 import com.opencart.steps.RegisterPageBL;
 import org.testng.annotations.Test;
 
-import static com.opencart.enums.URLs.BASE_URL;
+import static com.opencart.enums.URLs.*;
 
 public class UserRegisterTest extends BaseTest {
 

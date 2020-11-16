@@ -3,7 +3,9 @@ package com.opencart.steps;
 import com.opencart.pages.ProductContainer;
 import com.opencart.pages.SearchProductPage;
 import com.opencart.pages.SearchProductResultPage;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
 import java.util.List;
@@ -26,7 +28,7 @@ public class SearchProductPageBL {
         searchProductPage.getInputSearchCriteria().clear();
         searchProductPage.getInputSearchCriteria().sendKeys(value);
         clickOnSearchGroupButton();
-        clickOnSelectButton();
+        selectCategoryFromDropdown("Desktops");
         clickOnSearchButton();
         searchProductResultPage = new SearchProductResultPage();
         return this;
@@ -43,11 +45,9 @@ public class SearchProductPageBL {
     }
 
     public void verifyNegativeSearchResult() {
-        SoftAssert softAssert = new SoftAssert();
         String expectedResult = "There is no product that matches the search criteria.";
         String actualResult = searchProductResultPage.getNoProductsFoundTitle().getText();
-        softAssert.assertEquals(expectedResult, actualResult, "Search criteria is actually correct");
-        softAssert.assertAll();
+        Assert.assertEquals(expectedResult, actualResult, "Search criteria is actually correct");
     }
 
     private boolean findAllProductBySearchCriteria(String searchCriteria) {
@@ -66,20 +66,23 @@ public class SearchProductPageBL {
         return this;
     }
 
+// When I use the button from searchProductResultPage
+// I catch NullPointerException in the makeSearch()?
     private SearchProductPageBL clickOnSearchButton() {
         searchProductPage.getSearchButton().click();
         return this;
     }
 
-    private SearchProductPageBL clickOnSelectButton() {
+    public SearchProductPageBL selectCategoryFromDropdown(String s) {
         Select select = new Select(searchProductPage.getCategoryContainers());
-        select.selectByValue("20");
-
-//        Think how to make it more flexible?
-//        List<WebElement> optionList = select.getOptions();
-//        for (WebElement option : optionList){
-//            option.getCssValue("20");
-//        }
+        List<WebElement> optionList = select.getOptions();
+        for (WebElement option : optionList) {
+            boolean contains = option.getText().trim().contains(s);
+            if(!contains){
+                System.out.println("there are no such category");
+            }
+            select.selectByVisibleText(s);
+        }
         return this;
     }
 }

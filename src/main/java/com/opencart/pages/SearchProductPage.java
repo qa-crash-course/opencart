@@ -12,18 +12,11 @@ public class SearchProductPage extends BasePage {
     private WebElement inputSearchCriteria;
     @FindBy(css = "*.fa-search")
     private WebElement inputSearchGroupButton;
-    @FindBy(xpath = ".// *[@name ='category_id']")
-    private WebElement categoryContainers;
+    //searchButton and categoryContainers work perfectly from this Page
     @FindBy(xpath = ".//input[@value='Search']")
     private WebElement searchButton;
-
-    public WebElement getInputSearchCriteria() {
-        return inputSearchCriteria;
-    }
-
-    public WebElement getInputSearchGroupButton() {
-        return inputSearchGroupButton;
-    }
+    @FindBy(xpath = ".// *[@name ='category_id']")
+    private WebElement categoryContainers;
 
     public WebElement getCategoryContainers() {
         return categoryContainers;
@@ -31,5 +24,13 @@ public class SearchProductPage extends BasePage {
 
     public WebElement getSearchButton() {
         return searchButton;
+    }
+
+    public WebElement getInputSearchCriteria() {
+        return inputSearchCriteria;
+    }
+
+    public WebElement getInputSearchGroupButton() {
+        return inputSearchGroupButton;
     }
 }
