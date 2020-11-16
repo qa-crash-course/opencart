@@ -4,11 +4,11 @@ import com.opencart.datamodel.LoginModel;
 
 public class LoginModelRepository {
 
-    private LoginModelRepository(){
+    private LoginModelRepository() {
 
     }
 
-    public static LoginModel getLoginModel(){
+    public static LoginModel getLoginModel() {
         String password = "admin";
         String email = "test@gmail.com";
         return LoginModel.builder().email(email)

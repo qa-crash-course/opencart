@@ -16,5 +16,4 @@ public class UserLoginTest extends BaseTest {
                 .loginPerson();
         loginPageBL.verifyUserLogin();
     }
-
 }

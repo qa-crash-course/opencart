@@ -10,5 +10,4 @@ public class SuccessLoginPage extends BasePage {
     public WebElement getSuccessLoginTitle() {
         return successLoginTitle;
     }
-
 }
