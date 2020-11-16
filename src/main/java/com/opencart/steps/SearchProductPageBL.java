@@ -3,8 +3,6 @@ package com.opencart.steps;
 import com.opencart.pages.ProductContainer;
 import com.opencart.pages.SearchProductPage;
 import com.opencart.pages.SearchProductResultPage;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
@@ -16,7 +14,6 @@ import java.util.List;
  */
 
 public class SearchProductPageBL {
-
     private SearchProductPage searchProductPage;
     private SearchProductResultPage searchProductResultPage;
 
@@ -24,12 +21,10 @@ public class SearchProductPageBL {
         searchProductPage = new SearchProductPage();
     }
 
-    public SearchProductPageBL makeSearch(String value) {
+    public SearchProductPageBL makeSearch(String phrase) {
         searchProductPage.getInputSearchCriteria().clear();
-        searchProductPage.getInputSearchCriteria().sendKeys(value);
+        searchProductPage.getInputSearchCriteria().sendKeys(phrase);
         clickOnSearchGroupButton();
-        selectCategoryFromDropdown("Desktops");
-        clickOnSearchButton();
         searchProductResultPage = new SearchProductResultPage();
         return this;
     }
@@ -61,28 +56,8 @@ public class SearchProductPageBL {
         return isProductListContainsSearchCriteria;
     }
 
-    private SearchProductPageBL clickOnSearchGroupButton() {
+    public SearchProductPageBL clickOnSearchGroupButton() {
         searchProductPage.getInputSearchGroupButton().click();
-        return this;
-    }
-
-// When I use the button from searchProductResultPage
-// I catch NullPointerException in the makeSearch()?
-    private SearchProductPageBL clickOnSearchButton() {
-        searchProductPage.getSearchButton().click();
-        return this;
-    }
-
-    public SearchProductPageBL selectCategoryFromDropdown(String s) {
-        Select select = new Select(searchProductPage.getCategoryContainers());
-        List<WebElement> optionList = select.getOptions();
-        for (WebElement option : optionList) {
-            boolean contains = option.getText().trim().contains(s);
-            if(!contains){
-                System.out.println("there are no such category");
-            }
-            select.selectByVisibleText(s);
-        }
         return this;
     }
 }
