@@ -40,6 +40,7 @@ public class LoginPageBL {
 
     public void verifyUserLogin() {
         String expectedMessageLogin = "My Account";
-        Assert.assertEquals(successLoginPage.getSuccessLoginTitle().getText(), expectedMessageLogin, "Incorrect page title");
+        String actualMessageLogin = successLoginPage.getSuccessLoginTitle().getText();
+        Assert.assertEquals(actualMessageLogin, expectedMessageLogin, "Incorrect page title");
     }
 }
