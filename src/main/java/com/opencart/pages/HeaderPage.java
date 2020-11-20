@@ -14,7 +14,7 @@ public class HeaderPage extends BasePage {
     private WebElement loginButton;
 
     public WebElement getMyAccountButton() {
-        wait.until(ExpectedConditions.visibilityOf(myAccountButton));
+        wait.until(ExpectedConditions.elementToBeClickable(myAccountButton));
         return myAccountButton;
     }
     public WebElement getRegisterButton() {
