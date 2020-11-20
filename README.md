@@ -4,5 +4,7 @@ Before starting your local tests, make sure you change the opencart navigation U
 You can change the URL in  src/main/java/com/opencart/enums/URLs. 
 Use TeamLocalURLs Helper class.
 
-To create system variables in the project, you need to add them to the file aplicatin.properties 
-that are in the resource package (for example "email = test@gmail.com")
+To create system variables in the project in the main folder you need to create a package (resources),
+add a file called aplicatin.properties, enter your data in this file
+( for example:  "email = your email address")
+( for example:  "password = your password")
