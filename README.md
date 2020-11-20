@@ -5,6 +5,6 @@ You can change the URL in  src/main/java/com/opencart/enums/URLs.
 Use TeamLocalURLs Helper class.
 
 To create system variables in the project in the main folder you need to create a package (sources),
-add a file called aplicatin.properties, enter your data in this file
+add a file called application.properties, enter your data in this file
 ( for example:  "email = your email address")
 ( for example:  "password = your password")
