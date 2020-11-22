@@ -24,4 +24,9 @@ public class HeaderPageBL {
         headerPage.getLoginButton().click();
         return new LoginPageBL();
     }
+
+    public LogoutPageBL clickOnLogoutButton(){
+        headerPage.getLogoutButton().click();
+        return new LogoutPageBL();
+    }
 }

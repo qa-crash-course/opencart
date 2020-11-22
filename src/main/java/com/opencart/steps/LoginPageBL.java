@@ -42,5 +42,6 @@ public class LoginPageBL {
         String expectedMessageLogin = "My Account";
         String actualMessageLogin = successLoginPage.getSuccessLoginTitle().getText();
         Assert.assertEquals(actualMessageLogin, expectedMessageLogin, "Incorrect page title");
+        System.out.println("Success User Login");
     }
 }
