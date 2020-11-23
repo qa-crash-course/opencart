@@ -13,12 +13,31 @@ import java.util.List;
 public class SearchProductResultPage extends BasePage {
     @FindBy(xpath = ".//div/h2")
     private WebElement successTitle;
-
+    @FindBy(xpath = ".//div/h2/following-sibling::p")
+    private WebElement noProductsFoundTitle;
     @FindBy(className = ".product-layout")
     private List<WebElement> productContainers;
+    //searchButton and categoryContainers don't work from this Page?
+    @FindBy(xpath = ".//input[@value='Search']")
+    private WebElement searchButton;
+    @FindBy(xpath = ".// *[@name ='category_id']")
+    private WebElement categoryContainers;
+
+    public WebElement getSearchButton() {
+        return searchButton;
+    }
+
+    public WebElement getCategoryContainers() {
+        return categoryContainers;
+    }
+
 
     public WebElement getSuccessTitle() {
         return successTitle;
+    }
+
+    public WebElement getNoProductsFoundTitle() {
+        return noProductsFoundTitle;
     }
 
     public List<ProductContainer> getProductContainers() {

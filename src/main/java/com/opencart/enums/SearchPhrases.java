@@ -2,7 +2,7 @@ package com.opencart.enums;
 
 public enum SearchPhrases {
 
-    MAC("Mac"), SONY("Nikon");
+    MAC("mac"), SONY("Nikon"), DELL("xps 15");
 
     private final String value;
 
