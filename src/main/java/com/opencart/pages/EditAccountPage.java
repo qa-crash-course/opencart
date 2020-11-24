@@ -11,5 +11,4 @@ public class EditAccountPage extends BasePage {
     public WebElement getEditAccountButton() {
         return editAccountButton;
     }
-
 }

@@ -10,7 +10,7 @@ public class EditAccountModel {
     private String email;
     private String telephone;
 
-    EditAccountModel(){
+    private EditAccountModel(){
     }
 
     public static EditAccountModel.Builder getBuilder(){

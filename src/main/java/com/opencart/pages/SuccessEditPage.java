@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class SuccessEditPage extends BasePage {
-    @FindBy(xpath = "//*[contains(text(),' Success: Your account has been successfully updated.')]")
+    @FindBy(xpath = ".//*[@class='alert alert-success alert-dismissible']")
     private WebElement successEditTitle;
 
     public WebElement getSuccessEditTitle() {

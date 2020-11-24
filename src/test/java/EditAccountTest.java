@@ -10,7 +10,6 @@ import static com.opencart.enums.URLs.BASE_URL;
 public class EditAccountTest extends BaseTest {
     @Test
     public void editAccount() {
-
         new Navigation().navigateToUrl(BASE_URL.getValue());
         MainPageBL mainPageBL = new MainPageBL();
         RegisterPageBL registerPageBL = mainPageBL.getHeaderPageBL()
