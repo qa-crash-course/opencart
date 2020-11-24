@@ -12,10 +12,11 @@ public class LogoutPageBL {
         logoutPage = new LogoutPage();
     }
 
-    public void verifyUserLogout() {
+    public LogoutPageBL verifyUserLogout() {
+        successLogoutPage = new SuccessLogoutPage();
         String expectedMessageLogout = "Account Logout";
         String actualMessageLogout = successLogoutPage.getSuccessLogoutTitle().getText();
         Assert.assertEquals(actualMessageLogout, expectedMessageLogout, "Incorrect page title");
-        System.out.println("Success User Logout");
+        return this;
     }
 }

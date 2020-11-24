@@ -9,8 +9,6 @@ public class SuccessLogoutPage extends BasePage {
     private WebElement successLogoutTitle;
 
     public WebElement getSuccessLogoutTitle() {
-        wait.until(ExpectedConditions.visibilityOf(getSuccessLogoutTitle()));
         return successLogoutTitle;
-
     }
 }
