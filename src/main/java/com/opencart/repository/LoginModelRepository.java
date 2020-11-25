@@ -11,7 +11,6 @@ import java.util.Properties;
 public class LoginModelRepository {
 
     private LoginModelRepository() {
-
     }
 
     @SneakyThrows

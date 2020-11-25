@@ -4,6 +4,9 @@ Before starting your local tests, make sure you change the opencart navigation U
 You can change the URL in  src/main/java/com/opencart/enums/URLs. 
 Use TeamLocalURLs Helper class.
 
+Depending on which browser you are using, you need to change the browserName, 
+which is located in the ("driver"- package / "DriverRepository" - class)
+
 To create system variables in the project in the main folder you need to create a package (sources),
 add a file called application.properties, enter your data in this file
 ( for example:  "email = your email address")

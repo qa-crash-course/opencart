@@ -16,16 +16,31 @@ public class DriverRepository {
 
     public final static ThreadLocal<WebDriver> DRIVERS = new ThreadLocal<>();
     public static WebDriver webDriver;
+    private static String browserName = "Chrome";
 
     private DriverRepository() {
     }
 
     public static void downloadWebDriver() {
-        WebDriverManager.firefoxdriver().setup();
+        switch(browserName){
+            case "Firefox" :
+                WebDriverManager.firefoxdriver().setup();
+                break;
+            case "Chrome" :
+                WebDriverManager.chromedriver().setup();
+                break;
+        }
     }
 
-    public static void instanceWebBrowser() {
-        webDriver = new FirefoxDriver();
+    public static void instanceWebBrowser(){
+        switch(browserName){
+            case "Firefox" :
+                webDriver = new FirefoxDriver();
+                break; //необязательно
+            case "Chrome" :
+                webDriver = new ChromeDriver();
+                break;
+        }
         DRIVERS.set(webDriver);
         webDriver.manage().window().maximize();
     }
