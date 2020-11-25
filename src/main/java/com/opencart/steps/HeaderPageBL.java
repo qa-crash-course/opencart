@@ -19,4 +19,14 @@ public class HeaderPageBL {
         headerPage.getRegisterButton().click();
         return new RegisterPageBL();
     }
+
+    public LoginPageBL clickOnLoginButton(){
+        headerPage.getLoginButton().click();
+        return new LoginPageBL();
+    }
+//кнопка логаут у хедері
+    public LogoutPageBL clickOnLogoutButton(){
+        headerPage.getLogoutButton().click();
+        return new LogoutPageBL();
+    }
 }

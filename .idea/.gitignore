@@ -14,3 +14,5 @@ work/
 .project
 /shelf/
 /workspace.xml
+/opencart.iml
+.properties
