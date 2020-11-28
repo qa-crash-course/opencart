@@ -9,4 +9,8 @@ public class MainPageBL {
     public SearchProductPageBL getSearchPageBL() {
         return new SearchProductPageBL();
     }
+
+    public AdminPageBL getAdminPageBL() {
+        return new AdminPageBL();
+    }
 }

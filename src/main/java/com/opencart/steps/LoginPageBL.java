@@ -13,6 +13,7 @@ public class LoginPageBL {
     public LoginPageBL() {
         loginPage = new LoginPage();
     }
+
     public LoginPageBL loginPerson() {
         LoginModel loginModel = LoginModelRepository.getLoginModel();
         inputEmail(loginModel.getEmail());
