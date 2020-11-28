@@ -1,4 +1,3 @@
-import com.opencart.datamodel.AdminPanelModel;
 import com.opencart.navigation.Navigation;
 import com.opencart.steps.AdminPageBL;
 import com.opencart.steps.MainPageBL;

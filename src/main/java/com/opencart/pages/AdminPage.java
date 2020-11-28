@@ -1,30 +1,36 @@
 package com.opencart.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import javax.swing.*;
+public class AdminPage extends BasePage{
 
-public class AdminPage extends BasePage {
+    @FindBy(xpath = ".//*[contains(@href , '#collapse7')]")
+    private WebElement systemButton;
 
-    @FindBy(id = "input-username")
-    private WebElement adminUserName;
+    @FindBy(xpath = ".//*[contains(@href , '#collapse7-2')]")
+    private WebElement localizationButton;
 
-    @FindBy(id = "input-password")
-    private WebElement adminPassword;
+    @FindBy(xpath = ".//*[contains(@href , 'http://localhost/opencart/upload/admin/index.php?route=localisation/currency&user_token=AG2XbPvlJfbHIeiYJAFVx0llKsGXueRi\n')]")
+    private WebElement currenciesButton;
 
-    @FindBy(xpath = ".//*[@type = 'submit']")
-    private WebElement adminLoginButton;
+    @FindBy(css = "*.fa-plus")
+    private WebElement addNewCurrenciesButton;
 
-    public WebElement getAdminUserName() {
-        return adminUserName;
+    public WebElement getSystemButton() {
+        return systemButton;
     }
 
-    public WebElement getAdminPassword() {
-        return adminPassword;
+    public WebElement getLocalizationButton() {
+        return localizationButton;
     }
 
-    public WebElement getAdminLoginButton() {
-        return adminLoginButton;
+    public WebElement getCurrenciesButton() {
+        return currenciesButton;
+    }
+
+    public WebElement getAddNewCurrenciesButton() {
+        return addNewCurrenciesButton;
     }
 }

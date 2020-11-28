@@ -1,6 +1,6 @@
 package com.opencart.repository;
 
-import com.opencart.datamodel.AdminPanelModel;
+import com.opencart.datamodel.LoginAdminModel;
 import lombok.SneakyThrows;
 
 import java.io.FileInputStream;
@@ -12,13 +12,13 @@ public class AdminLoginRepository {
     }
 
     @SneakyThrows
-    public static AdminPanelModel getAdminPanelModel() {
+    public static LoginAdminModel getAdminPanelModel() {
         final Properties properties = new Properties();
         properties.load(new FileInputStream("src/main/sources/application.properties"));
         String adminUser = properties.getProperty("adminusername ");
         String adminPassword = properties.getProperty("adminpassword");
 
-        return AdminPanelModel.builder()
+        return LoginAdminModel.builder()
                 .adminUserName(adminUser)
                 .adminPassword(adminPassword)
                 .build();

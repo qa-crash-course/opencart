@@ -6,7 +6,7 @@ import lombok.Getter;
 @Getter
 @Builder
 
-public class AdminPanelModel {
+public class LoginAdminModel {
 
     private String adminUserName;
     private String adminPassword;
