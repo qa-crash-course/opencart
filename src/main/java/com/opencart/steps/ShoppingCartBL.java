@@ -20,7 +20,7 @@ public class ShoppingCartBL {
         return this;
     }
 
-    public ShoppingCartBL verifyRemoveButton() {
+    public ShoppingCartBL verifyThatShoppingCartIsEmpty() {
         String expected = "Your shopping cart is empty!";
         String actual = successShoppingCartPage.getRemoveTitle().getText();
         Assert.assertEquals(actual, expected);

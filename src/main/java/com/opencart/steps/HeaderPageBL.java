@@ -72,7 +72,7 @@ public class HeaderPageBL {
     }
 
     private void uploadFileButton() {
-        new DriverUtils().uploadFileElementJs(addToShoppingCartPage.getUploadFileButton());
+        new DriverUtils().uploadFileElementJs(addToShoppingCartPage.getUploadFileButton(), "'C:\\test.jpg'");
     }
 
     private void addToCartButton() {

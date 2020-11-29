@@ -25,7 +25,7 @@ public class ShoppingCartTest extends BaseTest {
         ShoppingCartBL shoppingCartBL = productPageBL.clickOnProductNameButtonWithAddOptions().availableProductOptions()
                 .goToShoppingCartStore()
                 .clickOnRemoveButton()
-                .verifyRemoveButton();
+                .verifyThatShoppingCartIsEmpty();
     }
 
     @Test
@@ -44,6 +44,6 @@ public class ShoppingCartTest extends BaseTest {
                 .withoutProductOptions()
                 .goToShoppingCartStore()
                 .clickOnRemoveButton()
-                .verifyRemoveButton();
+                .verifyThatShoppingCartIsEmpty();
     }
 }

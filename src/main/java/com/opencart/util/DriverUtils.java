@@ -17,8 +17,8 @@ public class DriverUtils {
         getJSExecutor().executeScript("arguments[0].click()", webElement);
     }
 
-    public void uploadFileElementJs(WebElement webElement) {
-        getJSExecutor().executeScript("arguments[0].value='C:\\test.jpg'", webElement);
+    public void uploadFileElementJs(WebElement webElement, String path) {
+        getJSExecutor().executeScript("arguments[0].value=" + path, webElement);
     }
 
     private JavascriptExecutor getJSExecutor() {
