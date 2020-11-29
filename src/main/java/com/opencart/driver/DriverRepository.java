@@ -16,7 +16,7 @@ public class DriverRepository {
 
     public final static ThreadLocal<WebDriver> DRIVERS = new ThreadLocal<>();
     public static WebDriver webDriver;
-    private static String browserName = "Firefox";
+    private static String browserName = "Chrome";
 
     private DriverRepository() {
     }
