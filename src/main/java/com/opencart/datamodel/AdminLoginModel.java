@@ -7,6 +7,7 @@ public class AdminLoginModel {
     private String adminUserName;
     private String adminPassword;
 
+
     public String getAdminUserName() {
         return adminUserName;
     }
