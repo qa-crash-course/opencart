@@ -33,11 +33,11 @@ public class HeaderPageBL {
         AddToShoppingCartModel addToShoppingCartModel = AddToShoppingCartModelRepository.getAddToShoppingCartModel();
         inputText(addToShoppingCartModel.getTextInput());
         inputAreaText(addToShoppingCartModel.getTextAreaInput());
-        radioButton();
-        checkboxButton();
-        sliderButton();
-        uploadFileButton();
-        addToCartButton();
+        clickOnRadioButton();
+        clickOnCheckboxButton();
+        clickAndChoiceSliderButton();
+        clickOnUploadFileButton();
+        clickOnAddToCartButton();
 
         successShoppingCartPage = new SuccessShoppingCartPage();
         return this;
@@ -58,24 +58,24 @@ public class HeaderPageBL {
         addToShoppingCartPage.getTextAreaInputButton().sendKeys(areaText);
     }
 
-    private void radioButton() {
+    private void clickOnRadioButton() {
         addToShoppingCartPage.getRadioButton().click();
     }
 
-    private void checkboxButton() {
+    private void clickOnCheckboxButton() {
         addToShoppingCartPage.getCheckboxButton().click();
     }
 
-    private void sliderButton() {
+    private void clickAndChoiceSliderButton() {
         addToShoppingCartPage.getSliderButton1().click();
         addToShoppingCartPage.getSliderButton2().click();
     }
 
-    private void uploadFileButton() {
+    private void clickOnUploadFileButton() {
         new DriverUtils().uploadFileElementJs(addToShoppingCartPage.getUploadFileButton(), "'C:\\test.jpg'");
     }
 
-    private void addToCartButton() {
+    private void clickOnAddToCartButton() {
         addToShoppingCartPage.getAddToCartButton().click();
     }
 
@@ -89,5 +89,4 @@ public class HeaderPageBL {
         addToShoppingCartPage.getGoToShoppingCartStore().click();
         return new ShoppingCartBL();
     }
-
 }

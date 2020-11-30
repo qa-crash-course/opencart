@@ -1,17 +1,17 @@
 package com.opencart.steps;
 
-import com.opencart.pages.EditAccountPage;
+import com.opencart.pages.LeftSideMenuOptionsPage;
 
 public class EditAccountBL {
 
-    private EditAccountPage editAccountPage;
+    private LeftSideMenuOptionsPage leftSideMenuOptionsPage;
 
     public EditAccountBL() {
-        editAccountPage = new EditAccountPage();
+        leftSideMenuOptionsPage = new LeftSideMenuOptionsPage();
     }
 
     public EditMyAccountInformationPageBL clickOnEditAccountButton() {
-        editAccountPage.getEditAccountButton().click();
+        leftSideMenuOptionsPage.getEditAccountButton().click();
         return new EditMyAccountInformationPageBL();
     }
 }
