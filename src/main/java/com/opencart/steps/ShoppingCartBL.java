@@ -26,4 +26,23 @@ public class ShoppingCartBL {
         Assert.assertEquals(actual, expected);
         return this;
     }
+
+    public ShoppingCartBL textInputUpdateButton(String numberOfProducts) {
+        successShoppingCartPage = new SuccessShoppingCartPage();
+        successShoppingCartPage.getTextInputOnUpdateButton().clear();
+        successShoppingCartPage.getTextInputOnUpdateButton().sendKeys(numberOfProducts);
+        return this;
+    }
+
+    public ShoppingCartBL clickOnUpdateButton() {
+        successShoppingCartPage.getClickOnUpdateButton().click();
+        return this;
+    }
+
+    public ShoppingCartBL verifyUpdateButtonTotalPriceField() {
+        String expected = "$2,408.00";
+        String actual = successShoppingCartPage.getVerifyUpdateButtonTotalPriceField().getText();
+        Assert.assertEquals(actual, expected);
+        return this;
+    }
 }

@@ -4,8 +4,7 @@ import com.opencart.steps.ProductPageBL;
 import com.opencart.steps.ShoppingCartBL;
 import org.testng.annotations.Test;
 
-import static com.opencart.enums.ShoppingCartVerifyProductByName.AppleCinema;
-import static com.opencart.enums.ShoppingCartVerifyProductByName.MacBook;
+import static com.opencart.enums.ShoppingCartVerification.*;
 import static com.opencart.enums.URLs.BASE_URL;
 
 public class ShoppingCartTest extends BaseTest {
@@ -45,5 +44,17 @@ public class ShoppingCartTest extends BaseTest {
                 .goToShoppingCartStore()
                 .clickOnRemoveButton()
                 .verifyThatShoppingCartIsEmpty();
+    }
+
+    @Test
+    public void verifyUpdateButtonTest() {
+        new Navigation().navigateToUrl(BASE_URL.getValue());
+        ProductPageBL productPageBL = new ProductPageBL();
+        ShoppingCartBL shoppingCartBL = productPageBL.clickOnProductNameButtonWithoutAddOptions()
+                .withoutProductOptions()
+                .goToShoppingCartStore()
+                .textInputUpdateButton(NumberOfProducts.getValue())
+                .clickOnUpdateButton()
+                .verifyUpdateButtonTotalPriceField();
     }
 }

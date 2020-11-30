@@ -15,6 +15,15 @@ public class SuccessShoppingCartPage extends BasePage {
     @FindBy(xpath = ".//div[@id='content']/p")
     private WebElement removeTitle;
 
+    @FindBy(xpath = ".//div[@class='input-group btn-block']//input")
+    private WebElement textInputOnUpdateButton;
+
+    @FindBy(xpath = ".//div[@class='input-group btn-block']//*[@type='submit']")
+    private WebElement clickOnUpdateButton;
+
+    @FindBy(xpath = ".//*[@class='table-responsive']//tbody//*[@class='text-right'][2]")
+    private WebElement verifyUpdateButtonTotalPriceField;
+
     public WebElement getSuccesTitle() {
         return succesTitle;
     }
@@ -26,5 +35,17 @@ public class SuccessShoppingCartPage extends BasePage {
     public WebElement getRemoveTitle() {
         wait.until(ExpectedConditions.textToBe(By.xpath(".//div[@id='content']/p"), "Your shopping cart is empty!"));
         return removeTitle;
+    }
+
+    public WebElement getTextInputOnUpdateButton() {
+        return textInputOnUpdateButton;
+    }
+
+    public WebElement getClickOnUpdateButton() {
+        return clickOnUpdateButton;
+    }
+
+    public WebElement getVerifyUpdateButtonTotalPriceField() {
+        return verifyUpdateButtonTotalPriceField;
     }
 }
