@@ -13,10 +13,8 @@ public class NavigationMenuAdminPage extends BasePage{
     @FindBy(xpath = ".//*[contains(@href,'#collapse7-2')]")
     private WebElement localisationButton;
 
-    @FindBy(xpath = ".//*[contains(@href,'http://localhost/opencart/upload/admin/index.php?route=localisation/currency&user_token=CKeDKOXjmz3TBF0gx7v2eyTl484vwaLJ')]")
+    @FindBy(css = "#collapse7-2 > li:nth-child(3) > a:nth-child(1)")
     private WebElement currenciesButton;
-
-
 
     public WebElement getSystemButton() {
         wait.until(ExpectedConditions.elementToBeClickable(systemButton));

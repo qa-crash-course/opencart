@@ -22,9 +22,9 @@ public class CurrencyPageBL {
         inputTitleCurrency(currencyModel.getCurrencyTitle());
         inputCodeCurrency(currencyModel.getCurrencyCode());
         inputValueCurrency(currencyModel.getCurrencyValue());
-        chooseStatusCurrency(1);
+        chooseStatusCurrency();
         clickOnSaveNewCurrencyButton();
-        successAddNewCurrency = new SuccessAddNewCurrency();
+
         return this;
     }
 
@@ -43,10 +43,15 @@ public class CurrencyPageBL {
         currencyPage.getValueCurrencyInput().sendKeys(valueCurrency);
     }
 
-    private void chooseStatusCurrency(int value){
-        new DriverUtils()
-                .clickOnElementJS(currencyPage.getEnabledCurrency(value));
+
+    private void  chooseStatusCurrency(){
+        currencyPage.getStatusNewCurrency().click();
+        currencyPage.getEnableStatusNewCurrency().click();
     }
+//    private void chooseStatusCurrency(int value){
+//        new DriverUtils()
+//                .clickOnElementJS(currencyPage.getEnabledCurrency(value));
+//    }
     private void clickOnAddNewCurrencyButton(){
         currencyPage.getAddNewCurrenciesButton().click();
     }
@@ -56,8 +61,9 @@ public class CurrencyPageBL {
     }
 
     public void verifyAddNewCurrency(){
-        String expectedMessage = " Success: You have modified currencies! ";
-        String actualResult = successAddNewCurrency.getSuccessAddNewCurrency().getText();
-        Assert.assertEquals(expectedMessage,actualResult, "Incorrect page title");
+        successAddNewCurrency = new SuccessAddNewCurrency();
+        String expectedMessage = "Success: You have modified currencies!";
+        String actualMessage = successAddNewCurrency.getSuccessAddNewCurrency().getText();
+        Assert.assertEquals(expectedMessage, actualMessage.replaceAll("×"," ").trim(), "Incorrect page title");
     }
 }

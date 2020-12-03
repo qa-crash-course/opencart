@@ -2,14 +2,12 @@ package com.opencart.steps;
 
 import com.opencart.datamodel.AdminLoginModel;
 import com.opencart.pages.AdminLoginPage;
-import com.opencart.pages.SuccessAdminLoginPage;
-import com.opencart.pages.SuccessLoginPage;
+import com.opencart.pages.AdminDashboardPage;
 import com.opencart.repository.AdminLoginRepository;
 import org.testng.Assert;
 
 public class AdminLoginPageBL {
     private AdminLoginPage adminLoginPage;
-    private SuccessAdminLoginPage successAdminLoginPage;
 
     public AdminLoginPageBL(){
         adminLoginPage = new AdminLoginPage();
@@ -36,13 +34,5 @@ public class AdminLoginPageBL {
     private AdminLoginPageBL clickOnLoginAdminButton(){
         adminLoginPage.getAdminLoginButton().click();
         return  this;
-    }
-
-    public AdminLoginPageBL verifyAdminLogin(){
-        successAdminLoginPage = new SuccessAdminLoginPage();
-        String expectedMessage = "Dashboard";
-        String actualMessage = successAdminLoginPage.getSuccessAdminLoginTitle().getText();
-        Assert.assertEquals(actualMessage,expectedMessage,"Incorrect Page Title");
-        return this;
     }
 }

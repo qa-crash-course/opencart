@@ -14,4 +14,7 @@ public class AdminMainPageBL {
     public NavigationMenuAdminPageBL getNavigateMenuAdminPageBL(){
         return new NavigationMenuAdminPageBL();
     }
+    public AdminDashboardPageBL getAdminDashboardPageBL(){
+        return new AdminDashboardPageBL();
+    }
 }

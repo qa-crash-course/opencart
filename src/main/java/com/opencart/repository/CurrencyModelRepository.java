@@ -9,8 +9,9 @@ public class CurrencyModelRepository {
 
     public static CurrencyModel getCurrencyModel() {
         return CurrencyModel.builder()
-                .currencyTitle(RandomStringUtils.randomAlphabetic(4))
-                .currencyCode(RandomStringUtils.randomAlphabetic(3))
+                .currencyTitle(RandomStringUtils.randomAlphabetic(1).toUpperCase()
+                        + RandomStringUtils.randomAlphabetic(3 ).toLowerCase())
+                .currencyCode((RandomStringUtils.randomAlphabetic(3)).toUpperCase())
                 .currencyValue(RandomStringUtils.randomNumeric(1))
                 .build();
     }

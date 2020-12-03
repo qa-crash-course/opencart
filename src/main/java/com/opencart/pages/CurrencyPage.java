@@ -21,10 +21,11 @@ public class CurrencyPage extends  BasePage{
     @FindBy(css = "*.fa-save")
     private WebElement currencySave;
 
-    public WebElement getEnabledCurrency(int value) {
-        return driver.findElement(
-                By.xpath(".//*[@id = 'input-status' and @value = '" + value + "']"));
-    }
+    @FindBy(id = "input-status")
+    private WebElement statusNewCurrency;
+
+    @FindBy(css = "#input-status > option:nth-child(1)")
+    private WebElement enableStatusNewCurrency;
 
     public WebElement getTitleCurrencyInput() {
         return titleCurrencyInput;
@@ -44,5 +45,13 @@ public class CurrencyPage extends  BasePage{
 
     public WebElement getCurrencySave() {
         return currencySave;
+    }
+
+    public WebElement getStatusNewCurrency() {
+        return statusNewCurrency;
+    }
+
+    public WebElement getEnableStatusNewCurrency() {
+        return enableStatusNewCurrency;
     }
 }
