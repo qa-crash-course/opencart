@@ -4,6 +4,7 @@ import com.opencart.datamodel.LoginModel;
 import com.opencart.pages.LoginPage;
 import com.opencart.pages.SuccessLoginPage;
 import com.opencart.repository.LoginModelRepository;
+import io.qameta.allure.Step;
 import org.testng.Assert;
 
 public class LoginPageBL {
@@ -14,6 +15,7 @@ public class LoginPageBL {
         loginPage = new LoginPage();
     }
 
+    @Step("Login person")
     public LoginPageBL loginPerson() {
         LoginModel loginModel = LoginModelRepository.getLoginModel();
         inputEmail(loginModel.getEmail());
@@ -39,6 +41,7 @@ public class LoginPageBL {
         return this;
     }
 
+    @Step("Check if the User is logged in " )
     public void verifyUserLogin() {
         String expectedMessageLogin = "My Account";
         String actualMessageLogin = successLoginPage.getSuccessLoginTitle().getText();

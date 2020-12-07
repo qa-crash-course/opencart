@@ -5,6 +5,7 @@ import com.opencart.pages.RegisterPage;
 import com.opencart.pages.SuccessRegisterPage;
 import com.opencart.repository.RegisterModelRepository;
 import com.opencart.util.DriverUtils;
+import io.qameta.allure.Step;
 import org.testng.Assert;
 
 public class RegisterPageBL {
@@ -16,6 +17,7 @@ public class RegisterPageBL {
         registerPage = new RegisterPage();
     }
 
+    @Step("Register new person")
     public RegisterPageBL registerNewPerson() {
         RegisterModel registerModel = RegisterModelRepository.getRegisterModel();
         inputFirstName(registerModel.getFirstName());
@@ -72,6 +74,7 @@ public class RegisterPageBL {
         return this;
     }
 
+    @Step("Check if the User is registered in " )
     public void verifyUserRegistration() {
         String expectedMessage = "Your Account Has Been Created!";
         String actualMessage = successRegisterPage.getSuccessTitle().getText();

@@ -1,0 +1,43 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "com.crashcourse",
+    "children" : [ {
+      "name" : "UserLogoutTest",
+      "children" : [ {
+        "name" : "logoutUser",
+        "uid" : "7c1290bca83ed8bc",
+        "parentUid" : "5060ec0cf771e9143f534d2946fce9af",
+        "status" : "passed",
+        "time" : {
+          "start" : 1607355695167,
+          "stop" : 1607355704933,
+          "duration" : 9766
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "5060ec0cf771e9143f534d2946fce9af"
+    }, {
+      "name" : "AddNewCurrencyTest",
+      "children" : [ {
+        "name" : "addNewCurrency",
+        "uid" : "515e10d06e10325f",
+        "parentUid" : "594bf82706ab3a563ced1cb517b4e2b3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1607355710700,
+          "stop" : 1607355720605,
+          "duration" : 9905
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "594bf82706ab3a563ced1cb517b4e2b3"
+    } ],
+    "uid" : "com.crashcourse"
+  } ]
+}

@@ -13,7 +13,7 @@ public class NavigationMenuAdminPage extends BasePage{
     @FindBy(xpath = ".//*[contains(@href,'#collapse7-2')]")
     private WebElement localisationButton;
 
-    @FindBy(css = "#collapse7-2 > li:nth-child(3) > a:nth-child(1)")
+    @FindBy(xpath = ".//*[contains(@href,'currency')]")
     private WebElement currenciesButton;
 
     public WebElement getSystemButton() {

@@ -1,8 +1,10 @@
 package com.opencart.datamodel;
 
 import com.opencart.pages.BasePage;
+import com.opencart.repository.CurrencyModelRepository;
 import lombok.Builder;
 import lombok.Getter;
+import org.apache.commons.lang3.RandomStringUtils;
 
 @Builder
 @Getter

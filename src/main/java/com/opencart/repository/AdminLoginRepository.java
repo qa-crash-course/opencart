@@ -14,7 +14,7 @@ public class AdminLoginRepository {
     @SneakyThrows
     public static AdminLoginModel getAdminLoginModel() {
         final Properties properties = new Properties();
-        properties.load(new FileInputStream("src/main/sources/application.properties"));
+        properties.load(new FileInputStream("resources/application.properties"));
         String adminUserName = properties.getProperty("adminUserName");
         String adminPassword = properties.getProperty("adminPassword");
 

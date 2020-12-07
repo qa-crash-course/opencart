@@ -14,7 +14,7 @@ public class LoginModelRepository {
     @SneakyThrows
     public static LoginModel getLoginModel() {
         final Properties properties = new Properties();
-        properties.load(new FileInputStream("src/main/sources/application.properties"));
+        properties.load(new FileInputStream("resources/application.properties"));
         String email = properties.getProperty("email");
         String password = properties.getProperty("password");
 

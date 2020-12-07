@@ -3,11 +3,16 @@ package com.opencart.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 public class CurrencyPage extends  BasePage{
 
+
     @FindBy(css = "*.fa-plus")
     private WebElement addNewCurrenciesButton;
+
+    @FindBy(css = "*.fa-trash-o")
+    private WebElement deleteCurrency;
 
     @FindBy(id = "input-title")
     private WebElement titleCurrencyInput;
@@ -22,10 +27,17 @@ public class CurrencyPage extends  BasePage{
     private WebElement currencySave;
 
     @FindBy(id = "input-status")
-    private WebElement statusNewCurrency;
-
-    @FindBy(css = "#input-status > option:nth-child(1)")
     private WebElement enableStatusNewCurrency;
+
+    public WebElement getCurrencyCheckbox(String currencyName) {
+        return driver.findElement(
+                By.xpath(".//*[text()='"+ currencyName +"']/preceding-sibling::td/*[@type='checkbox']"));
+    }
+
+    public Select getEnableStatusValue() {
+        return new Select(enableStatusNewCurrency);
+    }
+
 
     public WebElement getTitleCurrencyInput() {
         return titleCurrencyInput;
@@ -47,11 +59,7 @@ public class CurrencyPage extends  BasePage{
         return currencySave;
     }
 
-    public WebElement getStatusNewCurrency() {
-        return statusNewCurrency;
-    }
-
-    public WebElement getEnableStatusNewCurrency() {
-        return enableStatusNewCurrency;
+    public WebElement getDeleteCurrency() {
+        return deleteCurrency;
     }
 }

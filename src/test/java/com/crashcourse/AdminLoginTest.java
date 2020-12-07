@@ -1,6 +1,7 @@
+package com.crashcourse;
+
 import com.opencart.navigation.Navigation;
 
-import com.opencart.pages.AdminDashboardPage;
 import com.opencart.steps.AdminDashboardPageBL;
 import com.opencart.steps.AdminLoginPageBL;
 import com.opencart.steps.AdminMainPageBL;

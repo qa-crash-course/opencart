@@ -4,6 +4,7 @@ import com.opencart.datamodel.AdminLoginModel;
 import com.opencart.pages.AdminLoginPage;
 import com.opencart.pages.AdminDashboardPage;
 import com.opencart.repository.AdminLoginRepository;
+import io.qameta.allure.Step;
 import org.testng.Assert;
 
 public class AdminLoginPageBL {
@@ -12,7 +13,7 @@ public class AdminLoginPageBL {
     public AdminLoginPageBL(){
         adminLoginPage = new AdminLoginPage();
     }
-
+    @Step("Admin login in" )
     public AdminLoginPageBL loginAdminPerson(){
         AdminLoginModel adminLoginModel = AdminLoginRepository.getAdminLoginModel();
         inputAdminUserName(adminLoginModel.getAdminUserName());

@@ -1,0 +1,21 @@
+[ {
+  "uid" : "7c1290bca83ed8bc",
+  "name" : "logoutUser",
+  "time" : {
+    "start" : 1607355695167,
+    "stop" : 1607355704933,
+    "duration" : 9766
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "515e10d06e10325f",
+  "name" : "addNewCurrency",
+  "time" : {
+    "start" : 1607355710700,
+    "stop" : 1607355720605,
+    "duration" : 9905
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
