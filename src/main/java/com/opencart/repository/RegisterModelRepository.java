@@ -3,7 +3,7 @@ package com.opencart.repository;
 import com.opencart.datamodel.RegisterModel;
 import org.apache.commons.lang3.RandomStringUtils;
 
-public class RegisterModelRepository {
+public class    RegisterModelRepository {
     private RegisterModelRepository() {
     }
 

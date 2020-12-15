@@ -1,3 +1,5 @@
+package com.crashcourse;
+
 import com.opencart.navigation.Navigation;
 import com.opencart.steps.LoginPageBL;
 import com.opencart.steps.LogoutPageBL;

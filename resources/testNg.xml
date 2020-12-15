@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Regresion" verbose="3">
+    <test name="Test suit End To End flow  tests">
+        <classes>
+<!--            <package name="com.crashcourse.AdminLoginTest"/>-->
+            <class name="com.crashcourse.UserLogoutTest"/>
+            <class name="com.crashcourse.AddNewCurrencyTest"/>
+
+        </classes>
+    </test>
+</suite>

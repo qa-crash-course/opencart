@@ -20,4 +20,8 @@ public class DriverUtils {
     private JavascriptExecutor getJSExecutor() {
         return (JavascriptExecutor) driver;
     }
+
+    public void acceptAlert() {
+        driver.switchTo().alert().accept();
+    }
 }

@@ -1,0 +1,47 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "Regresion",
+    "children" : [ {
+      "name" : "Test suit End To End flow  tests",
+      "children" : [ {
+        "name" : "com.crashcourse.UserLogoutTest",
+        "children" : [ {
+          "name" : "logoutUser",
+          "uid" : "7c1290bca83ed8bc",
+          "parentUid" : "b7351b19259b6c4708e5132fec3de90b",
+          "status" : "passed",
+          "time" : {
+            "start" : 1607355695167,
+            "stop" : 1607355704933,
+            "duration" : 9766
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "b7351b19259b6c4708e5132fec3de90b"
+      }, {
+        "name" : "com.crashcourse.AddNewCurrencyTest",
+        "children" : [ {
+          "name" : "addNewCurrency",
+          "uid" : "515e10d06e10325f",
+          "parentUid" : "a54628ca5745b226a0efde8dd6606315",
+          "status" : "passed",
+          "time" : {
+            "start" : 1607355710700,
+            "stop" : 1607355720605,
+            "duration" : 9905
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "a54628ca5745b226a0efde8dd6606315"
+      } ],
+      "uid" : "6f177b1b317fd0398992bf88f0fe1c27"
+    } ],
+    "uid" : "7c30b8cb3614b814cfbc826a33fcee4d"
+  } ]
+}

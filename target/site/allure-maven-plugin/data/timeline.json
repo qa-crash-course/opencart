@@ -1,0 +1,39 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "Hrysiuk",
+    "children" : [ {
+      "name" : "14260@Hrysiuk.main(1)",
+      "children" : [ {
+        "name" : "logoutUser",
+        "uid" : "7c1290bca83ed8bc",
+        "parentUid" : "5c8ba8814711fede9adebdaa7093e319",
+        "status" : "passed",
+        "time" : {
+          "start" : 1607355695167,
+          "stop" : 1607355704933,
+          "duration" : 9766
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "addNewCurrency",
+        "uid" : "515e10d06e10325f",
+        "parentUid" : "5c8ba8814711fede9adebdaa7093e319",
+        "status" : "passed",
+        "time" : {
+          "start" : 1607355710700,
+          "stop" : 1607355720605,
+          "duration" : 9905
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "5c8ba8814711fede9adebdaa7093e319"
+    } ],
+    "uid" : "8d9f8f4a11d9df9ca81de834aad95f2c"
+  } ]
+}

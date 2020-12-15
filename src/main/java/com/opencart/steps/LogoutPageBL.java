@@ -1,17 +1,14 @@
 package com.opencart.steps;
 
-import com.opencart.pages.LogoutPage;
+
 import com.opencart.pages.SuccessLogoutPage;
+import io.qameta.allure.Step;
 import org.testng.Assert;
 
 public class LogoutPageBL {
-    private LogoutPage logoutPage;
     private SuccessLogoutPage successLogoutPage;
 
-    public LogoutPageBL() {
-        logoutPage = new LogoutPage();
-    }
-
+    @Step("Check if the User has logged out " )
     public LogoutPageBL verifyUserLogout() {
         successLogoutPage = new SuccessLogoutPage();
         String expectedMessageLogout = "Account Logout";

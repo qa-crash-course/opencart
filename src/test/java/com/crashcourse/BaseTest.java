@@ -1,3 +1,5 @@
+package com.crashcourse;
+
 import com.opencart.driver.DriverRepository;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
